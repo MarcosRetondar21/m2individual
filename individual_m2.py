@@ -1,10 +1,18 @@
+print('Já possuimos uma lista de candidatos e suas respectivas notas.\n\
+Solicitaremos as notas mínimas em cada avaliação e em seguida, se houver, entregaremos \
+\num ou mais candidatos que condizem com suas expectativas\n')
+
 # Lista de resultados dos candidatos
 resultados = [
-    {'nome': 'joão Pedro', 'resultado': 'e5_t4_p4_s7'},
-    {'nome': 'Maria Fernanda', 'resultado': 'e3_t5_p6_s8'},
+    {'nome': 'Aricécia', 'resultado': 'e5_t4_p4_s7'},
+    {'nome': 'Deusarina', 'resultado': 'e3_t5_p6_s8'},
     {'nome': 'Asdrubal', 'resultado': 'e7_t6_p3_s5'},
     {'nome': 'Gumercindo', 'resultado': 'e6_t7_p7_s9'},
     {'nome': 'Mariquita', 'resultado': 'e4_t4_p8_s8'},
+    {'nome': 'Vencesleu', 'resultado': 'e7_t5_p7_s8'},
+    {'nome': 'Napoleão', 'resultado': 'e7_t6_p3_s5'},
+    {'nome': 'Jucicleide', 'resultado': 'e9_t8_p7_s9'},
+    {'nome': 'Pácido', 'resultado': 'e4_t3_p5_s8'},
 ]
 
 # Busca dos candidatos
@@ -31,7 +39,7 @@ criterios['s'] = int(input("Digite a nota mínima desejada para a avaliação de
 candidatos_selecionados = buscar_candidatos(resultados, criterios)
 
 if len(candidatos_selecionados)> 0:
-    print("Candidatos selecionados:")
+    print("\nCandidatos selecionados:\n")
     for candidato in candidatos_selecionados:
         nome = candidato['nome']
         nota_e = int(candidato['resultado'][1])
@@ -40,9 +48,7 @@ if len(candidatos_selecionados)> 0:
         nota_s = int(candidato['resultado'][10])
         print(f"Nome: {nome}, Notas: e={nota_e}, t={nota_t}, p={nota_p}, s={nota_s}")
 else:
-    print('Candidato não encontrado')
-
-
+    print('\nCandidato não encontrado\n')
 
 
 
