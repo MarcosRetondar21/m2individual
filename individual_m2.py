@@ -19,10 +19,10 @@ resultados = [
 def buscar_candidatos(resultados, criterios):
     candidatos_selecionados = []
     for candidato in resultados:
-        nota_e = int(candidato['resultado'][1])
-        nota_t = int(candidato['resultado'][4])
-        nota_p = int(candidato['resultado'][7])
-        nota_s = int(candidato['resultado'][10])
+        nota_e = float(candidato['resultado'][1])
+        nota_t = float(candidato['resultado'][4])
+        nota_p = float(candidato['resultado'][7])
+        nota_s = float(candidato['resultado'][10])
         
         if nota_e >= criterios['e'] and nota_t >= criterios['t'] and nota_p >= criterios['p'] and nota_s >= criterios['s']:
             candidatos_selecionados.append(candidato)
@@ -31,10 +31,10 @@ def buscar_candidatos(resultados, criterios):
         
 # Critérios de avaliação
 criterios = {}
-criterios['e'] = int(input("Digite a nota mínima desejada para a etapa de entrevista: "))
-criterios['t'] = int(input("Digite a nota mínima desejada para o teste teórico: "))
-criterios['p'] = int(input("Digite a nota mínima desejada para o teste prático: "))
-criterios['s'] = int(input("Digite a nota mínima desejada para a avaliação de soft skills: "))
+criterios['e'] = float(input("Digite a nota mínima desejada para a etapa de entrevista: "))
+criterios['t'] = float(input("Digite a nota mínima desejada para o teste teórico: "))
+criterios['p'] = float(input("Digite a nota mínima desejada para o teste prático: "))
+criterios['s'] = float(input("Digite a nota mínima desejada para a avaliação de soft skills: "))
 
 candidatos_selecionados = buscar_candidatos(resultados, criterios)
 
